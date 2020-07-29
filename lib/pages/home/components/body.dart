@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plantApp/constants.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -26,6 +27,7 @@ class Body extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: Container(
+                  alignment: Alignment.center,
                   margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),  
                   padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),                
                   height: 54,
@@ -40,11 +42,20 @@ class Body extends StatelessWidget {
                       )
                     ]
                   ),
-                  child: TextField(
-                    decoration: InputDecoration(  
-                      hintText: "Search",
-                      hintStyle: TextStyle(color: kPrimaryColor.withOpacity(0.5))
-                    )
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: TextField(
+                        decoration: InputDecoration(  
+                          hintText: "Search",
+                          hintStyle: TextStyle(color: kPrimaryColor.withOpacity(0.5)),
+                          enabledBorder: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                        )
+                        ),
+                      ),
+                      SvgPicture.asset('assets/icons/serach.svg')
+                    ],
                   ),
                 ),
               )

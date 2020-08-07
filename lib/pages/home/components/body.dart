@@ -15,16 +15,27 @@ class Body extends StatelessWidget {
           TitleWithMoreBtn(title: "Recomendado",press: (){}),
           RecomendsPlants(),
           TitleWithMoreBtn(title: "Futuras Plantas",press: (){}),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: <Widget>[
-                FeaturePlantCard(image: "assets/images/bottom_img_1.png", press: (){}),
-                FeaturePlantCard(image: "assets/images/bottom_img_2.png", press: (){})
-              ]            
-            ),
-          )
+          FeaturedPlants()
         ],
+      ),
+    );
+  }
+}
+
+class FeaturedPlants extends StatelessWidget {
+  const FeaturedPlants({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: <Widget>[
+          FeaturePlantCard(image: "assets/images/bottom_img_1.png", press: (){}),
+          FeaturePlantCard(image: "assets/images/bottom_img_2.png", press: (){})
+        ]            
       ),
     );
   }

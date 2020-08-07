@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantApp/constants.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:plantApp/pages/details/components/icon_card.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -28,7 +29,10 @@ class Body extends StatelessWidget {
                         )
                       ),
                       Spacer(),
-                      IconCard()
+                      IconCard(icon: "assets/icons/sun.svg"),
+                      IconCard(icon: "assets/icons/icon_2.svg"),
+                      IconCard(icon: "assets/icons/icon_3.svg"),
+                      IconCard(icon: "assets/icons/icon_4.svg"),
                     ]
                   ),
                 )
@@ -52,38 +56,6 @@ class Body extends StatelessWidget {
           ),
         )
       ]
-    );
-  }
-}
-
-class IconCard extends StatelessWidget {
-  const IconCard({Key key}) : super(key: key);
-  
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Container(  
-      margin: EdgeInsets.symmetric(vertical: size.height * 0.03),
-      padding: EdgeInsets.all(kDefaultPadding / 2),
-      height: 62,
-      width: 62,
-      decoration: BoxDecoration(  
-        color: kBackgroundColor,
-        borderRadius: BorderRadius.circular(6),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, 15),
-            blurRadius: 22,
-            color: kPrimaryColor.withOpacity(0.22)
-          ),
-          BoxShadow(
-            offset: Offset(-15, -15),
-            blurRadius: 20,
-            color: Colors.white
-          )
-        ]
-      ),
-      child: SvgPicture.asset("assets/icons/sun.svg")
     );
   }
 }

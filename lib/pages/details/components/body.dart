@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:plantApp/constants.dart';
 import 'package:plantApp/pages/details/components/image_and_icons.dart';
+import 'package:plantApp/pages/details/components/title_and_price.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -8,7 +10,12 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          ImageAndIcons(size: size)
+          ImageAndIcons(size: size),
+          TitleAndPrice(
+            title: "messi",
+            country: "Argentina",
+            price: 567,
+          )
         ]
       ),
     );
